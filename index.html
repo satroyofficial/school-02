@@ -89,18 +89,78 @@
         .slider-button.next {
             right: 1rem;
         }
+
+        /* Hamburger menu icon styles */
+        .hamburger-icon {
+            display: none; /* Hidden by default on larger screens */
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            z-index: 20;
+        }
+        .hamburger-icon .bar {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Responsive adjustments for header and navigation */
+        @media (max-width: 767px) {
+            .hamburger-icon {
+                display: flex; /* Show on small screens */
+            }
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header-nav {
+                display: none; /* Hide navigation by default on small screens */
+                width: 100%;
+                margin-top: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-nav.active {
+                display: flex; /* Show when active */
+            }
+            .header-nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .header-nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
     <!-- Header Section -->
     <header class="bg-emerald-700 text-white shadow-lg py-4">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-center md:text-left mb-3 md:mb-0">
-                <h1 class="text-3xl font-bold">মিরপুর আদর্শ উচ্চ বিদ্যালয়</h1>
-                <p class="text-sm mt-1">জ্ঞান, শৃঙ্খলা, নৈতিকতা</p>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center header-content">
+            <div class="flex justify-between items-center w-full md:w-auto mb-3 md:mb-0">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold">মিরপুর আদর্শ উচ্চ বিদ্যালয়</h1>
+                    <p class="text-sm mt-1">জ্ঞান, শৃঙ্খলা, নৈতিকতা</p>
+                </div>
+                <!-- Hamburger Icon for Mobile -->
+                <button class="hamburger-icon md:hidden" id="hamburgerBtn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-            <nav>
+            
+            <nav class="header-nav" id="mainNav">
                 <ul class="flex flex-wrap justify-center md:justify-end space-x-4 text-lg">
                     <li><a href="#home" class="hover:text-emerald-200 transition duration-300 rounded-md p-2">হোম</a></li>
                     <li><a href="#about" class="hover:text-emerald-200 transition duration-300 rounded-md p-2">পরিচিতি</a></li>
@@ -455,7 +515,7 @@
                 <img src="https://images.pexels.com/photos/2132891/pexels-photo-2132891.jpeg?_gl=1*faj2sq*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MTgkajYwJGwwJGgw" alt="শিক্ষার্থীরা মাঠে" class="rounded-lg shadow-md object-cover w-full h-48">
                 <img src="https://images.pexels.com/photos/159213/hall-congress-architecture-building-159213.jpeg?_gl=1*potkhz*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU2NDEkajMkbDAkaDA." alt="স্কুলের অডিটোরিয়াম" class="rounded-lg shadow-md object-cover w-full h-48">
                 <img src="https://images.pexels.com/photos/357271/pexels-photo-357271.jpeg?_gl=1*1krmhxk*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MDUkajEyJGwwJGgw" alt="বিজ্ঞানাগারে পরীক্ষা" class="rounded-lg shadow-md object-cover w-full h-48">
-                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?_gl=1*17sp3tm*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MDgkajkkbDAkaDA." alt="খেলাধুলা" class="rounded-lg shadow-md object-cover w-full h-48">
+                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?_gl=1*17sp3tm*_ga*MTU4MzEyNzk5LjE3পিটি৩টিএম*_গা*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_গা_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MDgkajkkbDAkaDA." alt="খেলাধুলা" class="rounded-lg shadow-md object-cover w-full h-48">
             </div>
         </section>
 
@@ -674,7 +734,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for smooth scrolling and image slider -->
+    <!-- JavaScript for smooth scrolling, image slider, and responsive menu -->
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -684,6 +744,12 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                // Close mobile menu after clicking a link
+                const mainNav = document.getElementById('mainNav');
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
             });
         });
 
@@ -718,6 +784,16 @@
         // Initial display of slides
         document.addEventListener('DOMContentLoaded', showSlides);
 
+        // Responsive Menu Toggle Logic
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        if (hamburgerBtn && mainNav) {
+            hamburgerBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+
         // Gemini API Integration for Homework Helper
         const queryInput = document.getElementById('queryInput');
         const generateExplanationBtn = document.getElementById('generateExplanationBtn');
@@ -746,7 +822,9 @@
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: `একটি উচ্চ বিদ্যালয়ের শিক্ষার্থীর জন্য সহজভাবে ব্যাখ্যা করুন: ${prompt}` }] });
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will automatically provide the API key
+                // IMPORTANT: Replace "YOUR_GEMINI_API_KEY" with your actual Gemini API Key.
+                // You can get one from Google Cloud Console (APIs & Services -> Credentials).
+                const apiKey = "AIzaSyD5ah14TVC5LI5SDTDRaK8VxBvESXim1_w"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 console.log('Sending request to Gemini API:', payload); // Log the request payload
