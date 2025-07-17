@@ -515,7 +515,7 @@
                 <img src="https://images.pexels.com/photos/2132891/pexels-photo-2132891.jpeg?_gl=1*faj2sq*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MTgkajYwJGwwJGgw" alt="শিক্ষার্থীরা মাঠে" class="rounded-lg shadow-md object-cover w-full h-48">
                 <img src="https://images.pexels.com/photos/159213/hall-congress-architecture-building-159213.jpeg?_gl=1*potkhz*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU2NDEkajMkbDAkaDA." alt="স্কুলের অডিটোরিয়াম" class="rounded-lg shadow-md object-cover w-full h-48">
                 <img src="https://images.pexels.com/photos/357271/pexels-photo-357271.jpeg?_gl=1*1krmhxk*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MDUkajEyJGwwJGgw" alt="বিজ্ঞানাগারে পরীক্ষা" class="rounded-lg shadow-md object-cover w-full h-48">
-                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?_gl=1*17sp3tm*_ga*MTU4MzEyNzk5LjE3পিটি৩টিএম*_গা*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_গা_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MDgkajkkbDAkaDA." alt="খেলাধুলা" class="rounded-lg shadow-md object-cover w-full h-48">
+                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?_gl=1*17sp3tm*_ga*MTU4MzEyNzk5LjE3NTI3NDU1ODU.*_ga_8JE65Q40S6*czE3NTI3NDU1ODQkbzEkZzEkdDE3NTI3NDU3MDgkajkkbDAkaDA." alt="খেলাধুলা" class="rounded-lg shadow-md object-cover w-full h-48">
             </div>
         </section>
 
@@ -822,8 +822,7 @@
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: `একটি উচ্চ বিদ্যালয়ের শিক্ষার্থীর জন্য সহজভাবে ব্যাখ্যা করুন: ${prompt}` }] });
                 const payload = { contents: chatHistory };
-                // IMPORTANT: Replace "YOUR_GEMINI_API_KEY" with your actual Gemini API Key.
-                // You can get one from Google Cloud Console (APIs & Services -> Credentials).
+                // Using the provided API Key
                 const apiKey = "AIzaSyD5ah14TVC5LI5SDTDRaK8VxBvESXim1_w"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
